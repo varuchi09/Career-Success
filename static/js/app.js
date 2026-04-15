@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sliders.forEach(slider => {
         const el = document.getElementById(slider.id);
         const valEl = document.getElementById(slider.valId);
-        
+
         if (el && valEl) {
             el.addEventListener('input', (e) => {
                 let value = e.target.value;
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     valEl.textContent = value + (slider.suffix || '');
                 }
-                
+
                 updateRadarChart();
                 updateDoughnutChart();
             });
@@ -161,7 +161,7 @@ function updateDoughnutChart() {
     const interns = parseInt(document.getElementById('internships').value) || 0;
     const market = document.getElementById('market_demand').value;
     const branch = document.getElementById('branch').value;
-    
+
     // Model-Linked Logic (Synchronized with M+ Backend Algorithms)
     // 1. Fit (Portfolio_Strength equivalent)
     let portfolio_power = (projects * 1.5) + (certs * 1.2) + (interns * 2.0);
@@ -173,14 +173,14 @@ function updateDoughnutChart() {
     if (market === 'high') demand = 90;
     else if (market === 'medium') demand = 70;
     if (branch === 'CSE') demand += 5;
-    
+
     // 3. Stability (Success_Score equivalent) - Highly sensitive to academic setbacks
     let success_logic = (cgpa * comms) / (Math.pow(backlogs, 1.5) + 1);
-    let stability = (success_logic / 60) * 100; 
+    let stability = (success_logic / 60) * 100;
 
     const finalData = [
-        Math.min(100, Math.max(15, fit)), 
-        Math.min(100, Math.max(20, demand)), 
+        Math.min(100, Math.max(15, fit)),
+        Math.min(100, Math.max(20, demand)),
         Math.min(100, Math.max(10, stability))
     ];
 
@@ -190,15 +190,15 @@ function updateDoughnutChart() {
 
 function updateLineChart(p3, p6, p12, rate) {
     if (!lineChart) return;
-    
+
     // Map probabilistic milestones based on Model M+ outcomes
     const data = [
-        0, 
+        0,
         p3 === 'Yes' ? Math.max(75, rate * 0.8) : 35,
         p6 === 'Yes' ? Math.max(88, rate * 0.9) : 55,
         rate
     ];
-    
+
     lineChart.data.datasets[0].data = data;
     lineChart.update();
 }
@@ -243,7 +243,7 @@ document.getElementById('predictionForm').addEventListener('submit', async (e) =
             document.getElementById('val_12m').textContent = result.placed_12m;
             document.getElementById('val_sal').textContent = `₹ ${result.salary_lpa} L`;
             document.getElementById('val_rate').textContent = `${result.placement_rate}%`;
-            
+
             updateLineChart(result.placed_3m, result.placed_6m, result.placed_12m, result.placement_rate);
         }
     } catch (error) {
