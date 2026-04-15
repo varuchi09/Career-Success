@@ -1,2 +1,27 @@
-*.pkl
+# DATA ASSETS
 *.csv
+# Large binaries (Optional: Keep models.pkl tracked if needed for easier deployment, but commonly ignored)
+models.pkl
+
+# CHECKPOINTS & SESSION SCRAP
+checkpoints/
+.ipynb_checkpoints/
+scratch/
+
+# PYTHON ENVIRONMENT
+__pycache__/
+*.py[cod]
+*$py.class
+env/
+venv/
+.env/
+.venv/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+
+# LOGS & OS STUFF
+*.log
+.DS_Store
+Thumbs.db
