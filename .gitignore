@@ -1,5 +1,4 @@
 # DATA ASSETS
-*.csv
 # Large binaries (Optional: Keep models.pkl tracked if needed for easier deployment, but commonly ignored)
 models.pkl
 
