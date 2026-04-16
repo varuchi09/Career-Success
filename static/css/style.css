@@ -152,6 +152,21 @@ nav:hover {
     color: var(--text-primary);
 }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-primary);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
 /* Container Refinement */
 .container {
     max-width: 1440px;
@@ -214,6 +229,8 @@ section {
     box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
     text-align: left;
     max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
     overflow: hidden;
 }
 
@@ -272,6 +289,7 @@ section {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 2rem;
+    min-width: 0;
 }
 
 @media (max-width: 1400px) {
@@ -284,6 +302,8 @@ section {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    min-width: 0;
+    width: 100%;
 }
 
 .stat-card {
@@ -349,6 +369,10 @@ section {
     border-radius: 2rem;
     padding: 2.5rem;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .glass-card:hover {
@@ -651,6 +675,72 @@ select option {
     letter-spacing: 0.5px;
 }
 
+/* Blueprint Section (Hackathon Tech Specs) */
+.blueprint-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+@media (max-width: 900px) {
+
+    .blueprint-grid,
+    .team-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.blueprint-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 3rem;
+}
+
+.blueprint-icon {
+    font-size: 3rem;
+    color: var(--accent-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.blueprint-specs {
+    list-style: none;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.blueprint-specs li {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.blueprint-specs li::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-secondary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-secondary);
+}
+
 footer {
     padding: 6rem 2rem;
     text-align: center;
@@ -666,4 +756,228 @@ section h2 {
     background: linear-gradient(135deg, #fff, #64748b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+/* Canvas Override Protocol */
+canvas {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: 100%;
+}
+
+/* Chart Canvas Responsiveness */
+.radar-canvas-container {
+    position: relative;
+    height: 350px;
+    width: 100%;
+}
+
+.mini-canvas-container {
+    position: relative;
+    height: 140px;
+    width: 100%;
+}
+
+/* ==========================================================================
+   GLOBAL RESPONSIVENESS OVERRIDES
+   ========================================================================== */
+
+/* Tablet & Smaller Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 4.5rem;
+    }
+
+    section h2 {
+        font-size: 3.5rem;
+    }
+
+    .chart-column {
+        flex-direction: row;
+    }
+}
+
+/* Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .chart-column {
+        flex-direction: column;
+    }
+
+    nav {
+        width: 95%;
+        padding: 1rem 1.5rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        border-radius: 1.5rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        padding-top: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    section {
+        padding: 6rem 0;
+    }
+
+    #hero {
+        padding-top: 10rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
+    .workstation-card {
+        padding: 1.5rem;
+        border-radius: 2rem;
+        gap: 2rem;
+    }
+
+    .glass-card,
+    .blueprint-card,
+    .team-card,
+    .contact-card {
+        padding: 1.5rem !important;
+        border-radius: 1.5rem;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    /* Force canvas containers to not exceed screen */
+    .glass-card>div {
+        max-width: 100%;
+    }
+
+    section h2 {
+        font-size: 2.8rem;
+    }
+
+    .feature-icon,
+    .blueprint-icon,
+    .contact-card ion-icon {
+        font-size: 2.5rem;
+    }
+
+    .blueprint-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+
+    .chart-card {
+        padding: 1.5rem;
+    }
+
+    .radar-canvas-container {
+        height: 250px;
+    }
+
+    .mini-canvas-container {
+        height: 120px;
+    }
+}
+
+/* Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .results-ribbon {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .stat-card {
+        padding: 1rem;
+    }
+
+    .stat-value {
+        font-size: 1.25rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    nav {
+        padding: 0.8rem;
+    }
+
+    .nav-links {
+        gap: 0.8rem;
+    }
+
+    .nav-links a {
+        font-size: 0.75rem;
+    }
+
+    .btn-predict {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .contact-grid {
+        gap: 1.5rem;
+    }
+
+    .radar-canvas-container {
+        height: 200px;
+    }
+
+    .mini-canvas-container {
+        height: 100px;
+    }
 }
