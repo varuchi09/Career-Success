@@ -1,0 +1,77 @@
+---
+marp: true
+theme: default
+paginate: true
+backgroundColor: #f8f9fa
+---
+
+# **PRAGYA: Career Success Predictor**
+## Data-Driven Insights for Career Navigation
+**Event:** TenzorX 2026 National AI Hackathon
+
+---
+
+# **1. Introduction**
+- **What is PRAGYA?** 
+  An intelligent, ML-powered predictive system designed to analyze comprehensive student profiles and forecast real-world career success outcomes.
+- **Core Engine:** 
+  Leverages the advanced M+ Voting Ensemble Suite to transform unstructured academic history into actionable placement and salary expectations.
+
+---
+
+# **2. Problem Statement**
+- **Uncertain Employability:** Students struggle to accurately gauge their market value and employability before graduation.
+- **Myopic Metrics:** Traditional systems over-rely on CGPA, ignoring vital factors like communication skills and portfolio strength.
+- **Delayed Intervention:** Lack of personalized feedback leads to high "delayed placement risk," causing anxiety and financial stress (especially regarding student loan EMIs).
+
+---
+
+# **3. The Solution: PRAGYA**
+- **A Holistic Profiling Engine:** Evaluates 20+ diverse features including academic history, communication skills, internships, projects, and market demand.
+- **Time-Bound Predictions:** Predicts the probability of securing a placement within exact timeframes: 3 months, 6 months, and 12 months.
+- **Financial Forecasting:** Provides accurate estimates for expected Salary (LPA) and overall placement percentages.
+
+---
+
+# **4. Key Features & Derived Metrics**
+PRAGYA calculates specialized internal metrics to understand a candidate's true potential:
+- **Success Score:** A hybrid metric balancing academic excellence and soft skills against historical hurdles (backlogs).
+- **Portfolio Strength:** A weighted composite score evaluating practical experience (projects, certifications, and internships).
+- **Skill Depth:** An aggregated quantification of both hard and soft skills.
+
+---
+
+# **5. Technical Architecture**
+- **Machine Learning Core:** A synchronized master bundle of multiple specialized Scikit-Learn models (`joblib`).
+- **Data Engineering:** Robust preprocessing pipeline using Pandas and NumPy to construct exact 21-column feature vectors.
+- **Backend & API:** Lightweight and scalable Flask (Python) backend to handle real-time inference and JSON requests.
+
+---
+
+# **6. Advantages**
+- **Personalized Roadmaps:** Allows students to identify weak points (e.g., lack of internships) early in their academic journey.
+- **Fast & Lightweight:** Optimized ensemble inference provides instantaneous, real-time predictions.
+- **Context-Aware:** The model factors in external variables like college tier, branch market demand, and regional economics.
+
+---
+
+# **7. Target Audience & Impact**
+- **Students & Graduates:** To actively gauge readiness and strategically improve weak profile areas.
+- **Educational Institutions:** Enables placement cells to identify at-risk cohorts and provide targeted training programs.
+- **Financial Institutions:** Can assist in assessing student loan repayment capabilities based on accurate future income projections and income coverage ratios.
+
+---
+
+# **8. Future Scope**
+- **Live Market Integration:** Connecting to real-time job portal APIs to dynamically adjust "market demand" weights.
+- **AI Recommendation Engine:** Suggesting specific certifications, specific project types, or exact skills needed to boost placement odds.
+- **University Analytics Dashboard:** Providing comprehensive cohort-level analytics for academic boards.
+
+---
+
+# **9. Conclusion & Q&A**
+- **Summary:** PRAGYA bridges the vital gap between academic progress and future career outcomes.
+- **Mission:** Empowering the next generation of professionals to make data-backed career decisions.
+
+### **Thank You!**
+*Opening the floor for questions regarding PRAGYA's architecture, models, or vision.*
